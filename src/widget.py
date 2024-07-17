@@ -1,11 +1,10 @@
-from masks import *
 from datetime import datetime
+from typing import Any
 
-bank_data = input("Введите данные: ")
-date_input = input("Введите дату: ")
+from masks import get_mask_account, get_mask_card_number
 
 
-def mask_account_card(bank_data: str) -> str:
+def mask_account_card(bank_data: str) -> Any:
     """Возвращает маску номера карты или счета"""
     try:
         bank_data_list = bank_data.rsplit(" ", 1)
@@ -24,7 +23,7 @@ def mask_account_card(bank_data: str) -> str:
         return "Неправильный ввод данных"
 
 
-def get_date(date_input: str) -> str:
+def get_date(date_input: str) -> Any:
     """меняет формат времени"""
     try:
         dt = datetime.strptime(date_input, "%Y-%m-%dT%H:%M:%S.%f")

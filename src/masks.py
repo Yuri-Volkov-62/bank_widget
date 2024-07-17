@@ -1,7 +1,3 @@
-#cart_number = input("Введите номер карты: ")
-#account_number = input("Введите номер счета: ")
-
-
 def get_mask_card_number(cart_number: str) -> str:
     """функция возвращает маску номера карты"""
     if len(cart_number) == 16 and cart_number.isdigit() is True:
@@ -9,7 +5,7 @@ def get_mask_card_number(cart_number: str) -> str:
         for i in range(6, 12):
             cart_number_list[i] = "X"
             cart_number_string = "".join(cart_number_list)
-            cart_number_mask = " ".join([cart_number_string[i: i + 4] for i in range(0, len(cart_number_string), 4)])
+            cart_number_mask = " ".join([cart_number_string[i : i + 4] for i in range(0, len(cart_number_string), 4)])
         return cart_number_mask
     else:
         return "неправильно введен номер карты"
